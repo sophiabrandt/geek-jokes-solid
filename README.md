@@ -8,6 +8,16 @@ The repository shows my first attempt at [fetching data][geekjokes] with the **[
 
 This project was bootstrapped with [Create Solid](https://github.com/ryansolid/create-solid).
 
+## Installation
+
+You'll need Node.js. Clone the repository and install dependencies:
+
+```bash
+git clone git@github.com:sophiabrandt/geek-jokes-solid.git
+cd geek-jokes-solid
+npm install
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
