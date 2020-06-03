@@ -37,11 +37,10 @@ const App: Component = () => {
         >
           Fetch
         </button>
-        <div>{loading.jokes && 'Loading...'}</div>
+        <p class="center__text">{loading.jokes && 'Loading...'}</p>
+        <p class="center__text">{!state.jokes && 'no data'}</p>
         <ul class="[ flow ]">
-          <For each={state.jokes} fallback={<div class="center__text">no data...</div>}>
-            {(joke) => <li>{joke.joke}</li>}
-          </For>
+          <For each={state.jokes}>{(joke) => <li>{joke.joke}</li>}</For>
         </ul>
       </main>
     </div>
