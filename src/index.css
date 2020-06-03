@@ -1,0 +1,105 @@
+/**
+ * VARIABLES
+ */
+:root {
+  --border-thin-light: 1px solid var(--color-light);
+  --border-thin-dark: 1px solid var(--color-dark);
+  --color-dark: #344b5c;
+  --color-light: #e3e0d4;
+  --color-primary: #1263a1;
+  --color-secondary: #ffd100;
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --measure: 60ch;
+  --metric-gutter: 1.5rem;
+  --monotone-media-grayscale: 1;
+  --monotone-media-brightness: 1.1;
+  --space: 1rem;
+}
+
+/**
+ * GLOBAL STYLES
+ */
+* {
+  max-width: var(--measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+section,
+footer {
+  max-width: none;
+}
+
+body {
+  font-family: var(--font-sans-serif);
+}
+
+/**
+ * FLOW
+ */
+.flow {
+  --space: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.flow > * {
+  margin-top: 0;
+  margin-bottom: 0;
+} 
+
+.flow > * + * {
+  margin-top: var(--space);
+}
+
+/**
+ * CENTER
+ */
+.center {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--measure);
+}
+
+.center__text {
+  text-align: center;
+}
+
+/**
+ * BUTTON COMPONENT
+ */
+.button {
+  background: var(--color-secondary);
+  color: var(--color-dark);
+  font-size: 1.6rem;
+  min-width: 3.5rem;
+  cursor: pointer;
+  border: var(--border-thin-dark);
+  display: block;
+}
+
+.button:hover {
+  filter: brightness(1.05);
+}
+
+.button svg {
+  transform: translateY(1px); /* Optical adjustment */
+}
+
+
+/**
+ * LIST
+ */
+li {
+  color: var(--color-dark);
+}
