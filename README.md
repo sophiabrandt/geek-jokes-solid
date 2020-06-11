@@ -50,6 +50,8 @@ deno cache --reload --lock=lock.json deps.ts
 deno run -A main.ts server
 ```
 
+The app runs on `http://localhost:8080`.
+
 ## License
 
 Copyright © 2020 Sophia Brandt  
