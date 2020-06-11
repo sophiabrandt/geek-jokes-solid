@@ -96,6 +96,10 @@ body {
   transform: translateY(1px); /* Optical adjustment */
 }
 
+.button:disabled {
+  background: var(--color-dark);
+}
+
 
 /**
  * LIST

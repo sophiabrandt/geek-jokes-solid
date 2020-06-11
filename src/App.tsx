@@ -33,6 +33,7 @@ const App: Component = () => {
       <main class="[ center ]">
         <button
           class="[ center ] button"
+          disabled={loading.jokes}
           onClick={(e) => setState({ fetching: true })}
         >
           Fetch
