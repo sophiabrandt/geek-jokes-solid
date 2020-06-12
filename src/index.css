@@ -8,6 +8,7 @@
   --color-light: #e3e0d4;
   --color-primary: #1263a1;
   --color-secondary: #ffd100;
+  --color-light-grey: #bebebe;
   --font-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -97,7 +98,9 @@ body {
 }
 
 .button:disabled {
-  background: var(--color-dark);
+  background: var(--color-light-grey);
+  color: var(--color-light);
+  cursor: not-allowed;
 }
 
 

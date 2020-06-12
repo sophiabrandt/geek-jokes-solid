@@ -14,16 +14,27 @@ const App: Component = () => {
   }
 
   let loading
-  createEffect(() => {
-    loading = load({
-      jokes: state.fetching
+  /* createEffect(() => { */
+  /*   loading = load({ */
+  /*     jokes: state.fetching */
+  /*       ? getItems({ */
+  /*           url: 'https://geek-jokes.sameerkumar.website/api?format=json', */
+  /*         }) */
+  /*       : null, */
+  /*   }) */
+  /*   setState({ fetching: false }) */
+  /* }) */
+  const handleClick = () => {
+    load({
+      jokes: !state.fetching
         ? getItems({
             url: 'https://geek-jokes.sameerkumar.website/api?format=json',
-          })
-        : null,
+          }).then((response) => (setState({ fetching: false }), response))
+        : [],
     })
-    setState({ fetching: false })
-  })
+    setState({ fetching: true })
+  }
+
 
   return (
     <div>
@@ -31,15 +42,16 @@ const App: Component = () => {
         <h1 class="center__text">Geek Jokes with SolidJS</h1>
       </header>
       <main class="[ center ]">
+        <p class="center__text">{!state.fetching && 'Please click the button!'}</p>
+        <p class="center__text">{state.fetching && 'Loading...'}</p>
         <button
           class="[ center ] button"
-          disabled={loading.jokes}
-          onClick={(e) => setState({ fetching: true })}
+          disabled={state.fetching}
+          onClick={(e) => handleClick()}
         >
           Fetch
         </button>
-        <p class="center__text">{loading.jokes && 'Loading...'}</p>
-        <p class="center__text">{!state.jokes && 'no data'}</p>
+        <p class="center__text">{state.jokes.length === 0 && 'no data'}</p>
         <ul class="[ flow ]">
           <For each={state.jokes}>{(joke) => <li>{joke.joke}</li>}</For>
         </ul>
