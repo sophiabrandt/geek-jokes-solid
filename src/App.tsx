@@ -39,7 +39,7 @@ const App: Component = () => {
   return (
     <div>
       <header class="[ center ]">
-        <h1 class="center__text">Geek Jokes with SolidJS</h1>
+        <h1 class="center__text"><a href="https://github.com/sameerkumar18/geek-joke-api">Geek Jokes</a> with SolidJS</h1>
       </header>
       <main class="[ center ]">
         <p class="center__text">{!state.fetching && 'Please click the button!'}</p>
